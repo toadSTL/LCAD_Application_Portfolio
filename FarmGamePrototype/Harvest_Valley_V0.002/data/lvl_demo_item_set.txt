@@ -1,0 +1,29 @@
+{
+	"Item0": {
+		"Name": "Tomato",
+		"Global_Position": {
+			"x": 306,
+			"y": 468
+		},
+		"ID": 0,
+		"Quantity": 1
+	},
+	"Item1": {
+		"Name": "Tomato",
+		"Global_Position": {
+			"x": 270,
+			"y": 456.30899
+		},
+		"ID": 1,
+		"Quantity": 2
+	},
+	"Item2": {
+		"Name": "Tomato",
+		"Global_Position": {
+			"x": 241.345001,
+			"y": 476
+		},
+		"ID": 2,
+		"Quantity": 1
+	}
+}

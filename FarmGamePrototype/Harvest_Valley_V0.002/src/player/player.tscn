@@ -1,0 +1,282 @@
+[gd_scene load_steps=68 format=2]
+
+[ext_resource path="res://assets/char/player/player_sprite_sheet.png" type="Texture" id=1]
+[ext_resource path="res://src/player/anim/player_walk_south.tres" type="Animation" id=2]
+[ext_resource path="res://src/player/anim/player_idle_north.tres" type="Animation" id=3]
+[ext_resource path="res://src/player/anim/player_idle_east.tres" type="Animation" id=4]
+[ext_resource path="res://src/player/anim/player_walk_north.tres" type="Animation" id=5]
+[ext_resource path="res://src/player/anim/player_idle_west.tres" type="Animation" id=6]
+[ext_resource path="res://src/player/anim/player_idle_south.tres" type="Animation" id=7]
+[ext_resource path="res://src/player/anim/player_walk_west.tres" type="Animation" id=8]
+[ext_resource path="res://src/player/anim/player_walk_east.tres" type="Animation" id=9]
+[ext_resource path="res://src/player/player.gd" type="Script" id=10]
+[ext_resource path="res://src/player/anim/player_run_south.tres" type="Animation" id=11]
+[ext_resource path="res://src/player/anim/player_run_north.tres" type="Animation" id=12]
+[ext_resource path="res://src/player/anim/player_run_east.tres" type="Animation" id=13]
+[ext_resource path="res://src/player/anim/player_run_west.tres" type="Animation" id=14]
+[ext_resource path="res://src/player/anim/player_jump_south.tres" type="Animation" id=15]
+[ext_resource path="res://src/player/anim/player_jump_east.tres" type="Animation" id=16]
+[ext_resource path="res://src/player/anim/player_jump_north.tres" type="Animation" id=17]
+[ext_resource path="res://src/player/anim/player_jump_west.tres" type="Animation" id=18]
+[ext_resource path="res://assets/char/player/shadow.png" type="Texture" id=19]
+[ext_resource path="res://assets/char/player/testing_bar.png" type="Texture" id=20]
+[ext_resource path="res://src/player/anim/player_take_east.tres" type="Animation" id=21]
+[ext_resource path="res://src/player/anim/player_take_south.tres" type="Animation" id=22]
+[ext_resource path="res://src/player/anim/player_take_west.tres" type="Animation" id=23]
+[ext_resource path="res://src/player/anim/player_take_north.tres" type="Animation" id=24]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.56721
+height = 1.3703
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "idle_west"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "idle_south"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "idle_east"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "idle_north"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=6]
+blend_point_0/node = SubResource( 2 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 3 )
+blend_point_1/pos = Vector2( 0, 1 )
+blend_point_2/node = SubResource( 4 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 5 )
+blend_point_3/pos = Vector2( 0, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "jump_south"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "jump_east"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "jump_north"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "jump_west"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=11]
+blend_point_0/node = SubResource( 7 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 8 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 9 )
+blend_point_2/pos = Vector2( 0, -1 )
+blend_point_3/node = SubResource( 10 )
+blend_point_3/pos = Vector2( -1, 0 )
+
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "run_south"
+
+[sub_resource type="AnimationNodeAnimation" id=13]
+animation = "run_east"
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "run_north"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "run_west"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=16]
+blend_point_0/node = SubResource( 12 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 13 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 14 )
+blend_point_2/pos = Vector2( 0, -1 )
+blend_point_3/node = SubResource( 15 )
+blend_point_3/pos = Vector2( -1, 0 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "take_south"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "take_east"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "take_north"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "take_west"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=21]
+blend_point_0/node = SubResource( 17 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 18 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 19 )
+blend_point_2/pos = Vector2( 0, -1 )
+blend_point_3/node = SubResource( 20 )
+blend_point_3/pos = Vector2( -1, 0 )
+
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "walk_west"
+
+[sub_resource type="AnimationNodeAnimation" id=23]
+animation = "walk_south"
+
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "walk_east"
+
+[sub_resource type="AnimationNodeAnimation" id=25]
+animation = "walk_north"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=26]
+blend_point_0/node = SubResource( 22 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 23 )
+blend_point_1/pos = Vector2( 0, 1 )
+blend_point_2/node = SubResource( 24 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 25 )
+blend_point_3/pos = Vector2( 0, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+advance_condition = "walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+advance_condition = "idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+advance_condition = "running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+advance_condition = "walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+advance_condition = "running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+advance_condition = "idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+advance_condition = "jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+switch_mode = 2
+advance_condition = "idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+switch_mode = 2
+advance_condition = "running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+advance_condition = "jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+advance_condition = "jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+switch_mode = 2
+advance_condition = "walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=39]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=40]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=41]
+states/idle/node = SubResource( 6 )
+states/idle/position = Vector2( 427, 121 )
+states/jump/node = SubResource( 11 )
+states/jump/position = Vector2( 291.5, 263 )
+states/run/node = SubResource( 16 )
+states/run/position = Vector2( 527, 268 )
+states/take/node = SubResource( 21 )
+states/take/position = Vector2( 215.956, 121 )
+states/walk/node = SubResource( 26 )
+states/walk/position = Vector2( 632, 121 )
+transitions = [ "idle", "walk", SubResource( 27 ), "walk", "idle", SubResource( 28 ), "walk", "run", SubResource( 29 ), "run", "walk", SubResource( 30 ), "idle", "run", SubResource( 31 ), "run", "idle", SubResource( 32 ), "run", "jump", SubResource( 33 ), "jump", "idle", SubResource( 34 ), "jump", "run", SubResource( 35 ), "idle", "jump", SubResource( 36 ), "walk", "jump", SubResource( 37 ), "jump", "walk", SubResource( 38 ), "idle", "take", SubResource( 39 ), "take", "idle", SubResource( 40 ) ]
+start_node = "idle"
+graph_offset = Vector2( -137.044, 45 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=42]
+
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 2.46755, 0.101411 )
+
+[node name="player" type="KinematicBody2D"]
+collision_layer = 7
+collision_mask = 7
+collision/safe_margin = 0.1
+script = ExtResource( 10 )
+z_gravity_rate = 600.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -32.5, -39 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 15
+vframes = 23
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -7 )
+shape = SubResource( 1 )
+
+[node name="test_bar" type="Sprite" parent="CollisionShape2D"]
+visible = false
+texture = ExtResource( 20 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle_east = ExtResource( 4 )
+anims/idle_north = ExtResource( 3 )
+anims/idle_south = ExtResource( 7 )
+anims/idle_west = ExtResource( 6 )
+anims/jump_east = ExtResource( 16 )
+anims/jump_north = ExtResource( 17 )
+anims/jump_south = ExtResource( 15 )
+anims/jump_west = ExtResource( 18 )
+anims/run_east = ExtResource( 13 )
+anims/run_north = ExtResource( 12 )
+anims/run_south = ExtResource( 11 )
+anims/run_west = ExtResource( 14 )
+anims/take_east = ExtResource( 21 )
+anims/take_north = ExtResource( 24 )
+anims/take_south = ExtResource( 22 )
+anims/take_west = ExtResource( 23 )
+anims/walk_east = ExtResource( 9 )
+anims/walk_north = ExtResource( 5 )
+anims/walk_south = ExtResource( 2 )
+anims/walk_west = ExtResource( 8 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 41 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 42 )
+parameters/conditions/idle = false
+parameters/conditions/jumping = false
+parameters/conditions/running = false
+parameters/conditions/walking = false
+parameters/idle/blend_position = Vector2( 0, 0.974138 )
+parameters/jump/blend_position = Vector2( 0, 0 )
+parameters/run/blend_position = Vector2( -0.00309122, 1 )
+parameters/take/blend_position = Vector2( 0, 0 )
+parameters/walk/blend_position = Vector2( 0, 1 )
+
+[node name="GroundBeneath" type="Area2D" parent="."]
+
+[node name="Ground_CollisionShape2D" type="CollisionShape2D" parent="GroundBeneath"]
+position = Vector2( 0, -2.09828 )
+shape = SubResource( 43 )
+
+[node name="Shadow" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( -0.0834274, -2.00226 )
+texture = ExtResource( 19 )
+
+[connection signal="area_entered" from="GroundBeneath" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="GroundBeneath" to="." method="_on_area_exited"]

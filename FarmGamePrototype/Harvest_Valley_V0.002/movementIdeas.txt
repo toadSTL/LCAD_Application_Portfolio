@@ -1,0 +1,12 @@
+WASD - movement
+E - use item
+F - interact
+Shift - run
+ctrl - crouch/sneak?
+space - jump
+Q
+R
+alt
+C - character menu?
+V - inventory?
+` - console

@@ -1,0 +1,435 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/ui/options_menu.png" type="Texture" id=1]
+[ext_resource path="res://assets/ui/menu_tab_back.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/menu_tab.png" type="Texture" id=3]
+[ext_resource path="res://assets/font/alagard.font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://src/scene/Menus/Options_Menu.gd" type="Script" id=5]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 20, 18 )
+margin_left = 2.0
+margin_right = 2.0
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 20, 16 )
+margin_left = 2.0
+margin_right = 2.0
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 120, 80 )
+margin_left = 2.0
+margin_right = 2.0
+margin_top = 2.0
+margin_bottom = 2.0
+
+[node name="Options_Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -794.0
+margin_bottom = -367.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_right = 229.0
+margin_bottom = 232.0
+theme = SubResource( 1 )
+custom_styles/tab_fg = SubResource( 2 )
+custom_styles/tab_bg = SubResource( 3 )
+custom_styles/panel = SubResource( 4 )
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 27.0
+margin_right = -2.0
+margin_bottom = -2.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Audio"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -3.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Audio/MarginContainer"]
+margin_right = 215.0
+margin_bottom = 195.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio_Label" type="Label" parent="TabContainer/Audio/MarginContainer/GridContainer"]
+margin_right = 215.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+text = "Audio Options
+"
+align = 1
+
+[node name="Description" type="Label" parent="TabContainer/Audio/MarginContainer/GridContainer"]
+margin_top = 37.0
+margin_right = 143.0
+margin_bottom = 88.0
+size_flags_horizontal = 0
+text = "
+
+To be implemented."
+
+[node name="Accept" type="Button" parent="TabContainer/Audio/MarginContainer"]
+margin_left = 155.0
+margin_top = 174.0
+margin_right = 215.0
+margin_bottom = 195.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Accept"
+
+[node name="Video" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 27.0
+margin_right = -2.0
+margin_bottom = -2.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Video"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -3.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Video/MarginContainer"]
+margin_right = 215.0
+margin_bottom = 195.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Video_Label" type="Label" parent="TabContainer/Video/MarginContainer/GridContainer"]
+margin_right = 215.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+text = "Video Options
+"
+align = 1
+
+[node name="Fullscreen_Tog_Button" type="Button" parent="TabContainer/Video/MarginContainer/GridContainer"]
+margin_top = 37.0
+margin_right = 147.0
+margin_bottom = 58.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Toggle FullScreen"
+
+[node name="Accept" type="Button" parent="TabContainer/Video/MarginContainer"]
+margin_left = 155.0
+margin_top = 174.0
+margin_right = 215.0
+margin_bottom = 195.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Accept"
+
+[node name="Controls" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 27.0
+margin_right = -2.0
+margin_bottom = -2.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 220.0
+margin_bottom = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls/MarginContainer"]
+margin_right = 215.0
+margin_bottom = 195.0
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer"]
+margin_right = 215.0
+margin_bottom = 160.0
+rect_clip_content = true
+size_flags_horizontal = 3
+
+[node name="Control_Label" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer"]
+margin_right = 215.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Gameplay Settings
+"
+align = 1
+
+[node name="Description" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer"]
+margin_top = 37.0
+margin_right = 196.0
+margin_bottom = 160.0
+size_flags_horizontal = 0
+text = "To be implemented.
+
+Use WASD to move. 
+Press SPACE to jump. 
+Hold SHIFT to run.
+Press V to open inventory.
+CTRL+Click to split stacks."
+
+[node name="label-cursor-sens" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer"]
+visible = false
+margin_top = 19.0
+margin_right = 133.0
+margin_bottom = 34.0
+text = "Cursor Sensitivity"
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer"]
+visible = false
+margin_top = 38.0
+margin_right = 133.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+
+[node name="keybindings-table" type="GridContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer"]
+visible = false
+margin_top = 58.0
+margin_right = 225.0
+margin_bottom = 241.0
+columns = 3
+
+[node name="0-label-action" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_right = 88.0
+margin_bottom = 33.0
+text = "
+Action"
+
+[node name="0-label-cur-bind" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_left = 92.0
+margin_right = 151.0
+margin_bottom = 33.0
+text = "Current
+Binding"
+
+[node name="0-label-re-bind" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_left = 155.0
+margin_right = 225.0
+margin_bottom = 33.0
+text = "Re-bind
+Action"
+
+[node name="1-label-pause" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_top = 40.0
+margin_right = 88.0
+margin_bottom = 55.0
+text = "Pause Menu"
+
+[node name="1-label-pause-bind" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_left = 92.0
+margin_top = 40.0
+margin_right = 151.0
+margin_bottom = 55.0
+text = "Esc"
+
+[node name="1-re-bind-pause" type="Button" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_left = 155.0
+margin_top = 37.0
+margin_right = 225.0
+margin_bottom = 58.0
+text = "Re-bind"
+
+[node name="1-label-pause2" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_top = 65.0
+margin_right = 88.0
+margin_bottom = 80.0
+text = "Pause Menu"
+
+[node name="1-label-pause-bind2" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_left = 92.0
+margin_top = 65.0
+margin_right = 151.0
+margin_bottom = 80.0
+text = "Esc"
+
+[node name="1-re-bind-pause2" type="Button" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_left = 155.0
+margin_top = 62.0
+margin_right = 225.0
+margin_bottom = 83.0
+text = "Re-bind"
+
+[node name="1-label-pause3" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_top = 90.0
+margin_right = 88.0
+margin_bottom = 105.0
+text = "Pause Menu"
+
+[node name="1-label-pause-bind3" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_left = 92.0
+margin_top = 90.0
+margin_right = 151.0
+margin_bottom = 105.0
+text = "Esc"
+
+[node name="1-re-bind-pause3" type="Button" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_left = 155.0
+margin_top = 87.0
+margin_right = 225.0
+margin_bottom = 108.0
+text = "Re-bind"
+
+[node name="1-label-pause4" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_top = 115.0
+margin_right = 88.0
+margin_bottom = 130.0
+text = "Pause Menu"
+
+[node name="1-label-pause-bind4" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_left = 92.0
+margin_top = 115.0
+margin_right = 151.0
+margin_bottom = 130.0
+text = "Esc"
+
+[node name="1-re-bind-pause4" type="Button" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_left = 155.0
+margin_top = 112.0
+margin_right = 225.0
+margin_bottom = 133.0
+text = "Re-bind"
+
+[node name="1-label-pause5" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_top = 140.0
+margin_right = 88.0
+margin_bottom = 155.0
+text = "Pause Menu"
+
+[node name="1-label-pause-bind5" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_left = 92.0
+margin_top = 140.0
+margin_right = 151.0
+margin_bottom = 155.0
+text = "Esc"
+
+[node name="1-re-bind-pause5" type="Button" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_left = 155.0
+margin_top = 137.0
+margin_right = 225.0
+margin_bottom = 158.0
+text = "Re-bind"
+
+[node name="1-label-pause6" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_top = 165.0
+margin_right = 88.0
+margin_bottom = 180.0
+text = "Pause Menu"
+
+[node name="1-label-pause-bind6" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_left = 92.0
+margin_top = 165.0
+margin_right = 151.0
+margin_bottom = 180.0
+text = "Esc"
+
+[node name="1-re-bind-pause6" type="Button" parent="TabContainer/Controls/MarginContainer/ScrollContainer/GridContainer/keybindings-table"]
+margin_left = 155.0
+margin_top = 162.0
+margin_right = 225.0
+margin_bottom = 183.0
+text = "Re-bind"
+
+[node name="Accept" type="Button" parent="TabContainer/Controls/MarginContainer"]
+margin_left = 155.0
+margin_top = 174.0
+margin_right = 215.0
+margin_bottom = 195.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Accept"
+
+[node name="Debug" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 27.0
+margin_right = -2.0
+margin_bottom = -2.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Debug"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -3.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Debug/MarginContainer"]
+margin_right = 215.0
+margin_bottom = 195.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Debug_label" type="Label" parent="TabContainer/Debug/MarginContainer/GridContainer"]
+margin_right = 215.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+text = "Debug Options
+"
+align = 1
+
+[node name="Toggle_Debug_Disp_Button" type="Button" parent="TabContainer/Debug/MarginContainer/GridContainer"]
+margin_top = 37.0
+margin_right = 203.0
+margin_bottom = 58.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Toggle Debug Stat Display"
+
+[node name="Accept" type="Button" parent="TabContainer/Debug/MarginContainer"]
+margin_left = 155.0
+margin_top = 174.0
+margin_right = 215.0
+margin_bottom = 195.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Accept"
+
+[connection signal="pressed" from="TabContainer/Audio/MarginContainer/Accept" to="." method="_on_Accept_pressed"]
+[connection signal="pressed" from="TabContainer/Video/MarginContainer/GridContainer/Fullscreen_Tog_Button" to="." method="_on_Fullscreen_pressed"]
+[connection signal="pressed" from="TabContainer/Video/MarginContainer/Accept" to="." method="_on_Accept_pressed"]
+[connection signal="pressed" from="TabContainer/Controls/MarginContainer/Accept" to="." method="_on_Accept_pressed"]
+[connection signal="pressed" from="TabContainer/Debug/MarginContainer/GridContainer/Toggle_Debug_Disp_Button" to="." method="_on_Debug_Disp_pressed"]
+[connection signal="pressed" from="TabContainer/Debug/MarginContainer/Accept" to="." method="_on_Accept_pressed"]
