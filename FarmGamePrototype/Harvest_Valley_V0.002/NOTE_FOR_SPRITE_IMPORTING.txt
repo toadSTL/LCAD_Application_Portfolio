@@ -1,3 +1,0 @@
-sprite's file, open the import setting tab and disable filtering
-
-look into disabling by default

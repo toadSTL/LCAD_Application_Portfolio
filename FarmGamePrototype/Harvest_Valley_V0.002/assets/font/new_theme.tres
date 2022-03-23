@@ -1,8 +1,0 @@
-[gd_resource type="Theme" load_steps=3 format=2]
-
-[ext_resource path="res://assets/font/no_button_shadow.stylebox" type="StyleBox" id=1]
-[ext_resource path="res://assets/font/alagard.font.tres" type="DynamicFont" id=2]
-
-[resource]
-default_font = ExtResource( 2 )
-Button/styles/TestButton = ExtResource( 1 )
